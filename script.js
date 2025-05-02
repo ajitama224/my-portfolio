@@ -2,7 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // チャットボットボタンの処理
     const chatbotButton = document.getElementById('chatbot-button');
     chatbotButton.addEventListener('click', function() {
-        window.open('https://your-dify-chatbot-url.com', '_blank');
+        const container = document.getElementById('chatbot-iframe-container');
+        if (!container.innerHTML) {
+            container.innerHTML = `<iframe
+                src="https://cloud.dify.ai/explore/installed/331714bd-e510-4ef3-867d-1a1b00c721ff"
+                style="width: 100%; height: 600px; border: none;">
+            </iframe>`;
+        }
+        container.style.display = 'block';
+        container.scrollIntoView({ behavior: 'smooth' });
     });
 
     // LINEボタンの処理
