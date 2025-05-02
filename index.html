@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオサイト</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section id="top" class="hero">
+            <div class="hero-image">
+                <img src="path/to/your/top-image.jpg" alt="トップ画像">
+            </div>
+            <div class="hero-content">
+                <h1>AIチャットボットによる業務改善</h1>
+                <p class="catchphrase">管理栄養士 × AIチャットボット</p>
+                <p class="summary">食品メーカーや食品ECサイトへの導入に貢献できる専門家</p>
+            </div>
+            <div class="hero-image">
+                <img src="path/to/your/bottom-image.jpg" alt="下部画像">
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <h2>提供サービス</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <h3>チャットボットの開発
+                    </h3>
+                    <p>各主要なAIサービスと連携し、自然な会話に近いチャットボットを開発します。</p>
+                </div>
+                <div class="work-item">
+                    <h3>公式LINEへの連携</h3>
+                    <p>作成したチャットボットは公式LINEに連携することができます。</p>
+                </div>
+                <div class="work-item">
+                    <h3>定期メンテナンス</h3>
+                    <p>定期的に更新することで、常に最新の情報を入れたチャットボットを維持することができます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>スキル</h2>
+            <ul>
+                <li>ウェブサイト構築</li>
+                <li>チャットボット開発</li>
+                <li>管理栄養士の業務実績</li>
+                <li>食品開発コンサルティング</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>お問い合わせ</h2>
+            <form id="contact-form">
+                <h3>お問い合わせフォーム</h3>
+                <div class="form-group">
+                    <label for="company">貴社名（任意）</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="name">お名前（必須）</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="kana">お名前（フリガナ）（必須）</label>
+                    <input type="text" id="kana" name="kana" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス（必須）</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">件名（必須）</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">メッセージ（必須）</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">送信</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <button id="chatbot-button">チャットボットを試す</button>
+            <button id="line-button">LINEでのチャットボットを試す</button>
+        </div>
+    </footer>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#top">トップ</a></li>
+            <li><a href="#works">提供サービス</a></li>
+            <li><a href="#skills">スキル</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html> 
