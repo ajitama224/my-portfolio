@@ -2,15 +2,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // チャットボットボタンの処理
     const chatbotButton = document.getElementById('chatbot-button');
     chatbotButton.addEventListener('click', function() {
-        const container = document.getElementById('chatbot-iframe-container');
-        if (!container.innerHTML) {
-            container.innerHTML = `<iframe
-                src="https://cloud.dify.ai/explore/installed/331714bd-e510-4ef3-867d-1a1b00c721ff"
-                style="width: 100%; height: 600px; border: none;">
-            </iframe>`;
-        }
-        container.style.display = 'block';
-        container.scrollIntoView({ behavior: 'smooth' });
+        // モーダルの作成
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = '1000';
+
+        const modalContent = document.createElement('div');
+        modalContent.style.backgroundColor = 'white';
+        modalContent.style.padding = '2rem';
+        modalContent.style.borderRadius = '5px';
+        modalContent.style.position = 'relative';
+
+        const closeButton = document.createElement('button');
+        closeButton.textContent = '×';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.border = 'none';
+        closeButton.style.background = 'none';
+        closeButton.style.fontSize = '1.5rem';
+        closeButton.style.cursor = 'pointer';
+
+        const qrImage = document.createElement('img');
+        qrImage.src = 'images/qr-code.png'; // QRコード画像のパス
+        qrImage.alt = 'チャットボットQRコード';
+        qrImage.style.maxWidth = '300px';
+
+        modalContent.appendChild(closeButton);
+        modalContent.appendChild(qrImage);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+
+        closeButton.addEventListener('click', function() {
+            document.body.removeChild(modal);
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
     });
 
     // LINEボタンの処理
